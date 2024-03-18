@@ -71,7 +71,7 @@ const Setup = () => {
             <div class="hp-logo">
               <Link
                 to="/setup"
-                title="123.hp.com - Printer setup from the HP® Official site"
+                title="123.hp.com - setup"
               >
                 <img
                   alt="123.hp.com - Printer setup from the HP® Official site"
