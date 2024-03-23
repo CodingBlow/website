@@ -4,6 +4,7 @@ import {
   saleImgOne,
   saleImgTwo,
   saleImgThree,
+  saleImgFive,
 } from "../../../assets/images/index";
 import Image from "../../designLayouts/Image";
 
@@ -64,7 +65,7 @@ const Sale = () => {
       <div className="flex flex-col lg:flex-row p-6">
         <div className="lg:w-1/2">
           <img
-            src={saleImgOne}
+            src={saleImgFive}
             alt="Image"
             className="w-full h-auto lg:max-w-md lg:mx-auto"
           />

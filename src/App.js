@@ -11,7 +11,6 @@ import FooterBottom from "./components/home/Footer/FooterBottom";
 import Header from "./components/home/Header/Header";
 import HeaderBottom from "./components/home/Header/HeaderBottom";
 import SpecialCase from "./components/SpecialCase/SpecialCase";
-import About from "./pages/About/About";
 import SignIn from "./pages/Account/SignIn";
 import SignUp from "./pages/Account/SignUp";
 import Cart from "./pages/Cart/Cart";
@@ -27,6 +26,9 @@ import Downloading from "./pages/Downloading/Downloading";
 
 import Loading from "./pages/Loading/Loading";
 import Error from "./pages/Error/Error";
+import Privacypolicy from "./pages/privacy/Privacypolicy";
+import Terms from "./pages/Terms/Terms";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 const Layout = () => {
   return (
@@ -48,9 +50,12 @@ const router = createBrowserRouter(
         {/* ==================== Header Navlink Start here =================== */}
         <Route index element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
-        <Route path="/about" element={<About />}></Route>
+
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/journal" element={<Journal />}></Route>
+        <Route path="/privacy" element={<Privacypolicy />}></Route>
+        <Route path="/terms" element={<Terms />}></Route>
+        <Route path="/about-us" element={<AboutUs />}></Route>
         {/* ==================== Header Navlink End here ===================== */}
         <Route path="/offer" element={<Offer />}></Route>
         <Route path="/product/:_id" element={<ProductDetails />}></Route>

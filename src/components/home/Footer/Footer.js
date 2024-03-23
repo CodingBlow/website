@@ -81,16 +81,28 @@ const Footer = () => {
           </ul>
         </div>
         <div>
+          <FooterListTitle title="Pages" />
+          <ul className="flex flex-col gap-2">
+            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
+              <Link to="/about-us">About Us</Link>
+            </li>
+            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
+              <Link to="/privacy">Privacy Policy</Link>
+            </li>
+            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
+              <Link to="/terms">Terms & Conditions</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
           <FooterListTitle title="Contact Us" />
-        
-
           <p className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
             <a href="mailto:farhan091@gmail.com">
               EMAIL US: printhub.llc2024@gmail.com
             </a>
           </p>
         </div>
-        <div className="col-span-2 flex flex-col items-center w-full px-4">
+        <div className="col-span-2 flex flex-col items-center w-full px-4 ">
           <FooterListTitle title="Subscribe to our newsletter." />
           <div className="w-full">
             <p className="text-center mb-4">

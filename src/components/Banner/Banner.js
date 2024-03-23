@@ -6,7 +6,7 @@ function Banner() {
   return (
     <div
       className="relative bg-cover"
-style={{ backgroundColor: '#f0f0f0' }}
+      style={{ backgroundColor: "#f0f0f0" }}
     >
       <div className="flex flex-col lg:flex-row">
         <div className="flex-1 bg-lightBlue p-4">
@@ -17,9 +17,17 @@ style={{ backgroundColor: '#f0f0f0' }}
             How To Setup Remote Printer <br /> 123 Setup And Printer Setup
             <br /> Printer Scanner Setup
           </p>
+          <p className="pt-2 mb-7">
+            <Link
+              to="/setup"
+              className="font-bold py-4 px-6 mb-4 text-base md:text-lg bg-black border border-white rounded-lg text-white hover:bg-gray-800"
+            >
+              CLICK HERE FOR PRINTER SETUP
+            </Link>
+          </p>
           <p className="pt-2 mb-4">
             <span className="text-3xl lg:text-4xl font-bold">
-             Having Inconvenience With Printer?
+              Having Inconvenience With Printer?
             </span>
             <br />
             <span className="text-lg lg:text-xl font-bold">
@@ -28,15 +36,8 @@ style={{ backgroundColor: '#f0f0f0' }}
             <br />
             <span className="text-lg lg:text-xl font-bold">
               Chat us to talk with a live bolster expert
-
             </span>
           </p>
-          <Link
-            to="/setup"
-            className="inline-block bg-black p-4 border border-white rounded-lg text-white hover:bg-gray-800 w-max"
-          >
-            CLICK HERE FOR PRINTER SETUP
-          </Link>
         </div>
 
         {/* Right Div */}

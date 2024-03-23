@@ -33,7 +33,7 @@ const Header = () => {
           <div>
             <span class="text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
               {/* Printer Authorized Help Desk Number +1-(888) 495 2973 */}
-              Printer Authorized Help Desk Assistance
+              <Link to="/"> Printer Authorized Help Desk Assistance</Link>
             </span>
           </div>
 

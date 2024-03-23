@@ -8,6 +8,7 @@ import saleImgOne from "./sale/photo1.webp";
 import saleImgTwo from "./sale/photo1.1.webp";
 import saleImgThree from "./sale/photo1.0.webp";
 import saleImgFour from "./sale/photo2.webp";
+import saleImgFive from "./sale/setup2.webp";
 // ============== Products Start here ====================
 // New Arrivals
 import newArrOne from "./products/newArrival/new1.webp";
@@ -37,6 +38,7 @@ import paymentCard from "./payment.png";
 import emptyCart from "../images/emptyCart.png";
 
 export {
+  saleImgFive,
   printer,
   bgmain,
   hplogo,
