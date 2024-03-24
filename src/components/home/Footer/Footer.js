@@ -97,9 +97,11 @@ const Footer = () => {
         <div>
           <FooterListTitle title="Contact Us" />
           <p className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-            <a href="mailto:farhan091@gmail.com">
-              EMAIL US: printhub.llc2024@gmail.com
+            
+            <a href="mailto:printhub.llc2024@gmail.com">
+               printhub.llc2024@gmail.com
             </a>
+            <a href="tel:+1213457-3701"> +1 (213) 457-3701</a>
           </p>
         </div>
         <div className="col-span-2 flex flex-col items-center w-full px-4 ">

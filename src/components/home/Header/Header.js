@@ -31,9 +31,9 @@ const Header = () => {
       <nav className="h-full px-4 max-w-container mx-auto relative">
         <Flex className="flex items-center justify-between h-full">
           <div>
-            <span class="text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
+            <span class="text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl font-bold">
               {/* Printer Authorized Help Desk Number +1-(888) 495 2973 */}
-              <Link to="/"> Printer Authorized Help Desk Assistance</Link>
+              <Link to="/"> Printer Authorized Help Desk Assistance +1 (213) 457-3701</Link>
             </span>
           </div>
 
