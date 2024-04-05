@@ -53,7 +53,7 @@ function Banner() {
           <br />
           <p className="text-xl lg:text-4xl font-bold text-center lg:text-left">
             {/* Contact Number */}
-           Call Us: +1 (213) 457-3701
+           
           </p>
         </div>
       </div>
