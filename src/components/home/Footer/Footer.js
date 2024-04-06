@@ -94,16 +94,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <FooterListTitle title="Contact Us" />
-          <p className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-            
-            <a href="mailto:printhub.llc2024@gmail.com">
-               printhub.llc2024@gmail.com
-            </a>
-            <a href="tel:+1213457-3701"></a>
-          </p>
-        </div>
+       
         <div className="col-span-2 flex flex-col items-center w-full px-4 ">
           <FooterListTitle title="Subscribe to our newsletter." />
           <div className="w-full">
