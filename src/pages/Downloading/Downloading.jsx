@@ -21,7 +21,7 @@ const Downloading = () => {
 
   // form
 
-  const navigate = useNavigate();
+
 
   const [form, setForm] = React.useState({
     Name: "",
