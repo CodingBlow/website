@@ -6,7 +6,7 @@ function Banner() {
   return (
     <div
       className="relative bg-cover"
-      style={{ backgroundColor: "#f0f0f0" }}
+      style={{ backgroundColor: "F0F8FF" }}
     >
       <div className="flex flex-col lg:flex-row">
         <div className="flex-1 bg-lightBlue p-4">
