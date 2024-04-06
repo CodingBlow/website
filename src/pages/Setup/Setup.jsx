@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Setup = () => {
+  
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
   const navigate = useNavigate();
   const goToPage = () => {
   navigate("/setup/downloading"); 
@@ -66,6 +76,11 @@ const Setup = () => {
        
       </head>
       <body>
+          {isLoading && (
+          <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
+          </div>
+        )}
         <div class="header-123" id="header-123">
           <div class="header-container">
             <div class="hp-logo">
