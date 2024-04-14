@@ -33,33 +33,33 @@ const Loading = () => {
           <link
             media="screen"
             rel="stylesheet"
-            href="https://digihubsetup.com/setup/resources/assets/css/page/123fontstyles.css"
+            href="https://123.hp.com/resources/assets/css/page/123fontstyles.css"
           />
           <link
             media="screen"
             rel="stylesheet"
-            href="https://digihubsetup.com/setup/resources/assets/dist/application.min.css"
+            href="https://123.hp.com/resources/assets/dist/application.min.css"
           />
           <link
             rel="stylesheet"
-            href="https://digihubsetup.com/setup/resources/assets/css/vendor/jquery.typeahead.min.css"
+            href="https://123.hp.com/resources/assets/css/vendor/jquery.typeahead.min.css"
             type="text/css"
           />
 
           <title>123.hp.com - OTHER PRINTERS HP Smart</title>
           <link
             rel="stylesheet"
-            href="https://digihubsetup.com/setup/resources/assets/css/page/flex-design.css"
+            href="https://123.hp.com/resources/assets/css/page/flex-design.css"
             type="text/css"
           />
           <link
             rel="stylesheet"
-            href="https://digihubsetup.com/setup/resources/assets/css/page/desktop-app-store.css"
+            href="https://123.hp.com/resources/assets/css/page/desktop-app-store.css"
             type="text/css"
           />
           <link
             rel="stylesheet"
-            href="https://digihubsetup.com/setup/resources/assets/css/page/swls-delay.css"
+            href="https://123.hp.com/resources/assets/css/page/swls-delay.css"
             type="text/css"
           />
         </head>
@@ -73,7 +73,7 @@ const Loading = () => {
                 >
                   <img
                     alt="123.hp.com - Printer setup from the HP® Official site"
-                    src="https://digihubsetup.com/setup/resources/assets/img/hp-logo.svg"
+                    src="https://123.hp.com/resources/assets/img/hp-logo.svg"
                   />
                 </a>
               </div>
