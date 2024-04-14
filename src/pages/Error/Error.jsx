@@ -82,7 +82,7 @@ const Error = () => {
               >
                 <img
                   alt="123.hp.com - Printer setup from the HP® Official site"
-                  src="https://digihubsetup.com/setup/resources/assets/img/hp-logo.svg"
+                  src="https://123.hp.com/resources/assets/img/hp-logo.svg"
                 />
               </a>
             </div>
