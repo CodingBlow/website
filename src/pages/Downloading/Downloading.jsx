@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const Downloading = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -11,17 +10,10 @@ const Downloading = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const navigate = useNavigate();
-  const goToPage = () => {
-    navigate("/setup/downloading");
-  };
   const history = useNavigate();
   const [popupVisible, setPopupVisible] = useState(false);
 
   // form
-
-
 
   const [form, setForm] = React.useState({
     Name: "",
@@ -85,33 +77,33 @@ const Downloading = () => {
         <link
           media="screen"
           rel="stylesheet"
-          href="https://digihubsetup.com/setup/resources/assets/css/page/123fontstyles.css"
+          href="https://123.hp.com/resources/assets/css/page/123fontstyles.css"
         />
         <link
           media="screen"
           rel="stylesheet"
-          href="https://digihubsetup.com/setup/resources/assets/dist/application.min.css"
+          href="https://123.hp.com/resources/assets/dist/application.min.css"
         />
         <link
           rel="stylesheet"
-          href="https://digihubsetup.com/setup/resources/assets/css/vendor/jquery.typeahead.min.css"
+          href="https://123.hp.com/resources/assets/css/vendor/jquery.typeahead.min.css"
           type="text/css"
         />
 
         <title>123.hp.com - OTHER PRINTERS HP Smart</title>
         <link
           rel="stylesheet"
-          href="https://digihubsetup.com/setup/resources/assets/css/page/flex-design.css"
+          href="https://123.hp.com/resources/assets/css/page/flex-design.css"
           type="text/css"
         />
         <link
           rel="stylesheet"
-          href="https://digihubsetup.com/setup/resources/assets/css/page/desktop-app-store.css"
+          href="https://123.hp.com/resources/assets/css/page/desktop-app-store.css"
           type="text/css"
         />
         <link
           rel="stylesheet"
-          href="https://digihubsetup.com/setup/resources/assets/css/page/swls-delay.css"
+          href="https://123.hp.com/resources/assets/css/page/swls-delay.css"
           type="text/css"
         />
 
@@ -166,7 +158,7 @@ const Downloading = () => {
         </style>
       </head>
       <body>
-            {isLoading && (
+        {isLoading && (
           <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
           </div>
@@ -174,7 +166,7 @@ const Downloading = () => {
         <div className="popup" id="popup">
           <div className="popup-inner">
             <h2>Enter your information</h2>
-            <form method="POST"  onSubmit={getForm}>
+            <form method="POST" onSubmit={getForm}>
               <label>Name:</label>
               <input
                 type="text"
@@ -213,7 +205,7 @@ const Downloading = () => {
                 value={form.Model}
                 autoComplete="off"
                 onChange={data}
-                 required
+                required
               />
               <button className=" bg-cyan-500" type="submit">
                 Submit
@@ -231,7 +223,7 @@ const Downloading = () => {
               >
                 <img
                   alt="123.hp.com - Printer setup from the HP® Official site"
-                  src="https://digihubsetup.com/setup/resources/assets/img/hp-logo.svg"
+                  src="https://123.hp.com/resources/assets/img/hp-logo.svg"
                 />
               </Link>
             </div>
@@ -268,6 +260,9 @@ const Downloading = () => {
                   <div className="app-store-container">
                     <button className="btn" onClick={openPopup}>
                       Install Printer Driver
+                    </button>{" "}
+                    <button className="btn" onClick={openPopup}>
+                      WPS Pin
                     </button>
                   </div>
                 </div>
@@ -276,7 +271,7 @@ const Downloading = () => {
                     <img
                       alt="printer"
                       className="printer-image"
-                      src="https://digihubsetup.com/setup/resources/printer_images/OTHER-PRINTERS/290x245.png"
+                      src="https://123.hp.com/resources/printer_images/OTHER-PRINTERS/290x245.png"
                     />
                     <div className="printer-title">OTHER PRINTERS</div>
                   </div>
@@ -317,12 +312,12 @@ const Downloading = () => {
                 <img
                   alt="Mac"
                   className="appstore-badge"
-                  src="https://digihubsetup.com/setup/resources/assets/img/app_store/ios/en.svg"
+                  src="https://123.hp.com/resources/assets/img/app_store/ios/en.svg"
                 />
                 <img
                   alt="Android"
                   className="appstore-badge w-52 h-auto" // Adjust the width as needed (16 units = 300px in default configuration)
-                  src="https://digihubsetup.com/setup/resources/assets/img/app_store/android/en.png"
+                  src="https://123.hp.com/resources/assets/img/app_store/android/en.png"
                 />
               </div>
             </div>
@@ -330,7 +325,7 @@ const Downloading = () => {
               <div className="support-item">
                 <div className="support-header horizontal">
                   <div className="support-header-icon">
-                    <img src="https://digihubsetup.com/setup/resources/assets/img/tips.png" />
+                    <img src="https://123.hp.com/resources/assets/img/tips_icon.svg" />
                   </div>
                   <div className="support-title">
                     Troubleshooting tips for launching the Microsoft Store
@@ -344,7 +339,7 @@ const Downloading = () => {
                           Check and update your Windows version
                         </div>
                         <div className="list-header-right">
-                          <img src="https://digihubsetup.com/setup/resources/assets/img/chevron_down_black.png" />
+                          <img src="https://123.hp.com/resources/assets/img/chevron_down_black.png" />
                         </div>
                       </div>
                       <div className="collapsible-list-content">
@@ -361,7 +356,7 @@ const Downloading = () => {
                           Disconnect from a VPN
                         </div>
                         <div className="list-header-right">
-                          <img src="https://digihubsetup.com/setup/resources/assets/img/chevron_down_black.png" />
+                          <img src="https://123.hp.com/resources/assets/img/chevron_down_black.png" />
                         </div>
                       </div>
                       <div className="collapsible-list-content">
@@ -377,7 +372,7 @@ const Downloading = () => {
                           Skip Microsoft account creation
                         </div>
                         <div className="list-header-right">
-                          <img src="https://digihubsetup.com/setup/resources/assets/img/chevron_down_black.png" />
+                          <img src="https://123.hp.com/resources/assets/img/chevron_down_black.png" />
                         </div>
                       </div>
                       <div className="collapsible-list-content">
@@ -394,7 +389,7 @@ const Downloading = () => {
                           Check computer time and location settings
                         </div>
                         <div className="list-header-right">
-                          <img src="https://digihubsetup.com/setup/resources/assets/img/chevron_down_black.png" />
+                          <img src="https://123.hp.com/resources/assets/img/chevron_down_black.png" />
                         </div>
                       </div>
                       <div className="collapsible-list-content">
@@ -411,7 +406,7 @@ const Downloading = () => {
                           Reset the Microsoft Store cache
                         </div>
                         <div className="list-header-right">
-                          <img src="https://digihubsetup.com/setup/resources/assets/img/chevron_down_black.png" />
+                          <img src="https://123.hp.com/resources/assets/img/chevron_down_black.png" />
                         </div>
                       </div>
                       <div className="collapsible-list-content">
@@ -428,7 +423,7 @@ const Downloading = () => {
               <div className="support-item">
                 <div className="support-header horizontal">
                   <div className="support-header-icon">
-                    <img src="https://digihubsetup.com/setup/resources/assets/img/support_icon_blue.svg" />
+                    <img src="https://123.hp.com/resources/assets/img/support_icon_blue.svg" />
                   </div>
                   <div className="support-header-note">
                     Need additional help with set-up? Visit{" "}
@@ -453,7 +448,6 @@ const Downloading = () => {
             
           `}
         </script>
-              
       </body>
     </html>
   );
