@@ -4,10 +4,7 @@ import { printer, bgmain } from "../../assets/images";
 
 function Banner() {
   return (
-    <div
-      className="relative bg-cover"
-      style={{ backgroundColor: "F0F8FF" }}
-    >
+    <div className="relative bg-cover" style={{ backgroundColor: "F0F8FF" }}>
       <div className="flex flex-col lg:flex-row">
         <div className="flex-1 bg-lightBlue p-4">
           <h2 className="text-3xl lg:text-5xl font-bold mb-4">
@@ -30,13 +27,11 @@ function Banner() {
               Having Inconvenience With Printer?
             </span>
             <br />
-            <span className="text-lg lg:text-xl font-bold">
-              24X7 Master Specialized support
-            </span>
-            <br />
-            <span className="text-lg lg:text-xl font-bold">
-              Chat us to talk with a live bolster expert
-            </span>
+
+            <img
+              src="https://i.ibb.co/HDsN9g1/Screenshot-2024-08-06-212652.png"
+              className="w-full max-w-xs md:max-w-sm lg:max-w-md"
+            />
           </p>
         </div>
 
@@ -53,7 +48,6 @@ function Banner() {
           <br />
           <p className="text-xl lg:text-4xl font-bold text-center lg:text-left">
             {/* Contact Number */}
-           
           </p>
         </div>
       </div>
