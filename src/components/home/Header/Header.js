@@ -30,10 +30,14 @@ const Header = () => {
     <div className="w-full h-20 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
       <nav className="h-full px-4 max-w-container mx-auto relative">
         <Flex className="flex items-center justify-between h-full">
-          <div>
+           <div>
             <span class="text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl font-bold">
-              {/* Printer Authorized Help Desk Number +1-(888) 495 2973 */}
-              <Link to="/"> Printer Authorized Help Desk Assistance</Link>
+              <Link to="/">
+                <img
+                  src="https://i.ibb.co/Qp99YTW/Screenshot-2024-08-06-212623.png"
+                  class="w-4/5 md:w-3/4 lg:w-3/4 xl:w-2/3 max-w-full h-auto"
+                />
+              </Link>
             </span>
           </div>
 
