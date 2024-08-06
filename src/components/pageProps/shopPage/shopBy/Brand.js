@@ -7,23 +7,19 @@ const Brand = () => {
   const brands = [
     {
       _id: 9006,
-      title: "Apple",
+      title: "HP",
     },
     {
       _id: 9007,
-      title: "Ultron",
+      title: "Canon",
     },
     {
       _id: 9008,
-      title: "Unknown",
+      title: "Epson",
     },
     {
       _id: 9009,
-      title: "Shoppers Home",
-    },
-    {
-      _id: 9010,
-      title: "Hoichoi",
+      title: "Brother",
     },
   ];
 
