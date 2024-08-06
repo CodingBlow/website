@@ -7,28 +7,18 @@ const Color = () => {
   const colors = [
     {
       _id: 9001,
-      title: "Green",
-      base: "#22c55e",
+      title: "Black",
+      base: "#000000",
     },
     {
       _id: 9002,
       title: "Gray",
-      base: "#a3a3a3",
+      base: "#808080",
     },
     {
       _id: 9003,
-      title: "Red",
-      base: "#dc2626",
-    },
-    {
-      _id: 9004,
-      title: "Yellow",
-      base: "#f59e0b",
-    },
-    {
-      _id: 9005,
-      title: "Blue",
-      base: "#3b82f6",
+      title: "White",
+      base: "#FFFFFF",
     },
   ];
 
