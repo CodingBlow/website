@@ -16,11 +16,10 @@ const Sale = () => {
             Conduct Diagnosis and Resolve Issues
           </p>
           <p className="text-gray-700 mb-4 text-lg">
-            Within this troubleshooting hub, you will discover a collection of
-            automated and self-service solutions designed to address prevalent
-            computer and printer issues. Simply click on the tabs to switch
-            between computer and printer topics, and then choose a specific
-            problem to access the available solutions.
+            Find easy-to-use resources for common computer and printer problems.
+            Click on the tabs to choose between computer and printer topics,
+            then select a problem to see helpful solutions. For setting up your
+            printer, click here.
           </p>
           <Link
             to="/Setup"
