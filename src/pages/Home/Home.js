@@ -1,394 +1,516 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrintHub Setup LLC - Professional Printing Services</title>
+import React, { useState, useEffect } from 'react';
+
+const Home = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const styles = {
+    container: {
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '0 2rem'
+    },
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    header: {
+      position: 'fixed',
+      top: 0,
+      width: '100%',
+      background: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      borderBottom: '1px solid #e2e8f0',
+      zIndex: 1000,
+      transition: 'all 0.3s ease',
+      boxShadow: isScrolled ? '0 10px 25px -3px rgba(0, 0, 0, 0.1)' : 'none'
+    },
+    
+    navbar: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '1rem 0'
+    },
+    
+    logo: {
+      fontFamily: "'Playfair Display', serif",
+      fontSize: '1.75rem',
+      fontWeight: 700,
+      textDecoration: 'none',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    },
+    
+    navLinks: {
+      display: 'flex',
+      listStyle: 'none',
+      gap: '2rem'
+    },
+    
+    navLink: {
+      textDecoration: 'none',
+      color: '#64748b',
+      fontWeight: 500,
+      position: 'relative',
+      padding: '0.5rem 0',
+      transition: 'color 0.3s ease'
+    },
+    
+    hamburger: {
+      display: 'none',
+      flexDirection: 'column',
+      cursor: 'pointer',
+      gap: '0.25rem'
+    },
+    
+    hamburgerSpan: {
+      width: '25px',
+      height: '3px',
+      background: '#334155',
+      transition: 'all 0.3s ease',
+      borderRadius: '2px'
+    },
+    
+    hero: {
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    
+    heroContent: {
+      textAlign: 'center',
+      color: '#ffffff',
+      position: 'relative',
+      zIndex: 2,
+      maxWidth: '800px',
+      margin: '0 auto'
+    },
+    
+    heroTitle: {
+      fontFamily: "'Playfair Display', serif",
+      fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#ffffff',
+      marginBottom: '1.5rem',
+      textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+    },
+    
+    heroText: {
+      fontSize: '1.25rem',
+      marginBottom: '2rem',
+      opacity: 0.95,
+      maxWidth: '600px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      lineHeight: 1.7
+    },
+    
+    heroButtons: {
+      display: 'flex',
+      gap: '1rem',
+      justifyContent: 'center',
+      flexWrap: 'wrap'
+    },
+    
+    btn: {
+      position: 'relative',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      padding: '1rem 2rem',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: '#ffffff',
+      textDecoration: 'none',
+      borderRadius: '50px',
+      fontWeight: 600,
+      letterSpacing: '0.5px',
+      overflow: 'hidden',
+      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+      boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.1)',
+      border: 'none',
+      cursor: 'pointer'
+    },
+    
+    btnSecondary: {
+      background: '#ffffff',
+      color: '#334155',
+      border: '2px solid #e2e8f0'
+    },
+    
+    section: {
+      padding: '6rem 0'
+    },
+    
+    sectionHeader: {
+      textAlign: 'center',
+      marginBottom: '4rem',
+      maxWidth: '600px',
+      marginLeft: 'auto',
+      marginRight: 'auto'
+    },
+    
+    sectionTitle: {
+      fontFamily: "'Playfair Display', serif",
+      fontSize: 'clamp(2rem, 4vw, 3rem)',
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#334155',
+      marginBottom: '1rem'
+    },
+    
+    textGradient: {
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    },
+    
+    servicesGrid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+      gap: '2rem',
+      marginTop: '3rem'
+    },
+    
+    serviceCard: {
+      background: '#ffffff',
+      padding: '2.5rem',
+      borderRadius: '20px',
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+      border: '1px solid #e2e8f0',
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    
+    serviceIcon: {
+      width: '80px',
+      height: '80px',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: '1.5rem',
+      fontSize: '2rem',
+      color: '#ffffff'
+    },
+    
+    serviceTitle: {
+      fontFamily: "'Playfair Display', serif",
+      fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#334155',
+      marginBottom: '1rem'
+    },
+    
+    aboutSection: {
+      padding: '6rem 0',
+      background: '#ffffff'
+    },
+    
+    aboutContent: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '4rem',
+      alignItems: 'center'
+    },
+    
+    aboutText: {
+      fontSize: '1.1rem',
+      lineHeight: 1.8,
+      color: '#64748b'
+    },
+    
+    aboutImage: {
+      position: 'relative',
+      borderRadius: '20px',
+      overflow: 'hidden',
+      boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.1)'
+    },
+    
+    testimonialSection: {
+      padding: '6rem 0',
+      background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      color: '#ffffff'
+    },
+    
+    testimonialCard: {
+      background: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      padding: '3rem',
+      borderRadius: '20px',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      maxWidth: '700px',
+      margin: '0 auto',
+      textAlign: 'center'
+    },
+    
+    contactSection: {
+      padding: '6rem 0',
+      background: '#1a1a2e',
+      color: '#ffffff',
+      textAlign: 'center'
+    },
+    
+    contactDetails: {
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '3rem',
+      margin: '2rem 0',
+      flexWrap: 'wrap'
+    },
+    
+    contactItem: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.75rem',
+      fontSize: '1.1rem'
+    },
+    
+    footer: {
+      background: '#16213e',
+      color: '#64748b',
+      padding: '3rem 0',
+      textAlign: 'center'
+    },
+    
+    footerContent: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '2rem',
+      marginBottom: '2rem'
+    },
+    
+    footerSection: {
+      textAlign: 'left'
+    },
+    
+    footerTitle: {
+      color: '#ffffff',
+      marginBottom: '1rem',
+      fontSize: '1.25rem',
+      fontWeight: 600
+    },
+    
+    footerBottom: {
+      paddingTop: '2rem',
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+      textAlign: 'center'
+    }
+  };
 
-    <style>
-        /* --- 1. General Styles & Color Variables --- */
-        /* --- You can easily change your website's colors here --- */
-        :root {
-            --primary-color: #007bff; /* A nice blue, change if you want */
-            --dark-color: #2a2a2a;
-            --light-color: #f9f9f9;
-            --white-color: #ffffff;
-            --text-color: #555;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth; /* Enables smooth scrolling */
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 2rem;
-            overflow: hidden;
-        }
-        
-        section {
-            padding: 4rem 0;
-        }
-
-        h1, h2 {
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-        
-        h2 {
-            text-align: center;
-            font-size: 2.2rem;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white-color);
-            padding: 12px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #0056b3; /* A darker shade of the primary color */
-        }
-
-        /* --- 2. Header & Navigation --- */
-        .header {
-            background: var(--white-color);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hamburger Menu for Mobile */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.8rem;
-        }
-
-
-        /* --- 3. Hero Section --- */
-        #hero {
-            background: var(--light-color);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        #hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* --- 4. Services Section --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .service-card {
-            background: var(--white-color);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-card .icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.3rem;
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* --- 5. About Section --- */
-        #about {
-            background: var(--light-color);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-content img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        
-        /* --- 6. Testimonials Section --- */
-        .testimonial-card {
-            background: var(--light-color);
-            padding: 2rem;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 5px;
-            max-width: 700px;
-            margin: 2rem auto;
-        }
-        
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        /* --- 7. Contact Section --- */
-        .contact-info {
-            text-align: center;
-        }
-
-        /* --- 8. Footer --- */
-        .footer {
-            background: var(--dark-color);
-            color: var(--white-color);
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* --- 9. Responsive Styles for Mobile --- */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.8rem;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: var(--white-color);
-                position: absolute;
-                top: 65px;
-                left: 0;
-                text-align: center;
-                padding: 1rem 0;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 1rem 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-content img {
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header">
-        <div class="container navbar">
-            <a href="#hero" class="logo">PrintHub Setup</a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+  return (
+    <div>
+      {/* Header */}
+      <header style={styles.header}>
+        <div style={styles.container}>
+          <nav style={styles.navbar}>
+            <a href="#hero" style={styles.logo}>PrintHub Setup</a>
+            <ul style={styles.navLinks}>
+              <li><a href="#hero" style={styles.navLink}>Home</a></li>
+              <li><a href="#services" style={styles.navLink}>Services</a></li>
+              <li><a href="#about" style={styles.navLink}>About</a></li>
+              <li><a href="#testimonials" style={styles.navLink}>Testimonials</a></li>
+              <li><a href="#contact" style={styles.navLink}>Contact</a></li>
             </ul>
-            <div class="hamburger">☰</div>
+            <div 
+              style={styles.hamburger} 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span style={styles.hamburgerSpan}></span>
+              <span style={styles.hamburgerSpan}></span>
+              <span style={styles.hamburgerSpan}></span>
+            </div>
+          </nav>
         </div>
-    </header>
+      </header>
 
-    <main>
-        <section id="hero">
-            <div class="container hero-content">
-                <h1>High-Quality Printing, Made Simple & Fast</h1>
-                <p>We provide professional printing solutions for your business, from business cards to large banners, with a focus on quality and speed.</p>
-                <a href="#contact" class="btn">Get a Free Quote</a>
+      <main>
+        {/* Hero Section */}
+        <section style={styles.hero}>
+          <div style={styles.container}>
+            <div style={styles.heroContent}>
+              <h1 style={styles.heroTitle}>
+                Transform Your Business with{' '}
+                <span style={styles.textGradient}>Professional Digital Solutions</span>
+              </h1>
+              <p style={styles.heroText}>
+                We deliver world-class printing services, stunning website designs, and memorable logo creations that elevate your brand and accelerate your success in the digital age.
+              </p>
+              <div style={styles.heroButtons}>
+                <a href="#contact" style={styles.btn}>
+                  🚀 Get Free Quote
+                </a>
+                <a href="#services" style={{...styles.btn, ...styles.btnSecondary}}>
+                  👁️ Explore Services
+                </a>
+              </div>
             </div>
+          </div>
         </section>
 
-        <section id="services">
-            <div class="container">
-                <h2>Our Services</h2>
-                <p class="section-subtitle">We offer a wide range of printing services to meet your needs.</p>
+        {/* Services Section */}
+        <section style={{...styles.section, background: '#f8fafc'}}>
+          <div style={styles.container}>
+            <div style={styles.sectionHeader}>
+              <h2 style={styles.sectionTitle}>
+                Our <span style={styles.textGradient}>Premium Services</span>
+              </h2>
+              <p>From concept to completion, we provide comprehensive digital solutions that drive results and create lasting impressions for your business.</p>
+            </div>
+            <div style={styles.servicesGrid}>
+              <div style={styles.serviceCard}>
+                <div style={styles.serviceIcon}>🎨</div>
+                <h3 style={styles.serviceTitle}>Website Design & Development</h3>
+                <p>Custom, responsive websites built with modern technologies that deliver exceptional user experiences and drive conversions across all devices.</p>
+              </div>
+              <div style={styles.serviceCard}>
+                <div style={styles.serviceIcon}>⭐</div>
+                <h3 style={styles.serviceTitle}>Logo & Brand Identity</h3>
+                <p>Distinctive logos and comprehensive branding solutions that capture your essence and resonate powerfully with your target audience.</p>
+              </div>
+              <div style={styles.serviceCard}>
+                <div style={styles.serviceIcon}>🖨️</div>
+                <h3 style={styles.serviceTitle}>Professional Printing</h3>
+                <p>High-quality business cards, brochures, banners, and marketing materials printed with precision and delivered on time, every time.</p>
+              </div>
+              <div style={styles.serviceCard}>
+                <div style={styles.serviceIcon}>📈</div>
+                <h3 style={styles.serviceTitle}>Digital Marketing</h3>
+                <p>Strategic SEO, social media marketing, and PPC campaigns designed to maximize your online visibility and generate qualified leads.</p>
+              </div>
+              <div style={styles.serviceCard}>
+                <div style={styles.serviceIcon}>📱</div>
+                <h3 style={styles.serviceTitle}>Mobile Optimization</h3>
+                <p>Ensure your digital presence performs flawlessly on all devices with our mobile-first approach to design and development.</p>
+              </div>
+              <div style={styles.serviceCard}>
+                <div style={styles.serviceIcon}>🎧</div>
+                <h3 style={styles.serviceTitle}>24/7 Support</h3>
+                <p>Dedicated customer support and maintenance services to keep your digital assets running smoothly around the clock.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="icon">📇</div>
-                        <h3>Business Cards</h3>
-                        <p>Premium, high-quality business cards that make a lasting impression.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">📄</div>
-                        <h3>Flyers & Brochures</h3>
-                        <p>Promote your business or event with professionally designed flyers.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">🖼️</div>
-                        <h3>Banners & Posters</h3>
-                        <p>Large format printing for indoor and outdoor advertising that gets noticed.</p>
-                    </div>
+        {/* About Section */}
+        <section style={styles.aboutSection}>
+          <div style={styles.container}>
+            <div style={styles.aboutContent}>
+              <div style={styles.aboutText}>
+                <h2 style={styles.sectionTitle}>
+                  About <span style={styles.textGradient}>PrintHub Setup</span>
+                </h2>
+                <p>Founded on the principles of excellence and innovation, PrintHub Setup LLC has emerged as a premier digital solutions provider, transforming businesses through cutting-edge design and strategic digital marketing.</p>
+                <p>Our team of creative professionals and technical experts collaborate to deliver solutions that not only meet your immediate needs but position your business for long-term success in an increasingly digital marketplace.</p>
+                <p>From startups to established enterprises, we've helped hundreds of clients achieve their goals through our comprehensive suite of services and unwavering commitment to quality.</p>
+              </div>
+              <div style={styles.aboutImage}>
+                <img 
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Modern Office Environment"
+                  style={{width: '100%', height: '400px', objectFit: 'cover'}}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section style={styles.testimonialSection}>
+          <div style={styles.container}>
+            <div style={styles.sectionHeader}>
+              <h2 style={{...styles.sectionTitle, color: 'white'}}>What Our Clients Say</h2>
+            </div>
+            <div style={styles.testimonialCard}>
+              <p style={{fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.6}}>
+                "PrintHub Setup transformed our entire digital presence. Their website design increased our conversion rate by 300%, and their branding work perfectly captured our company's vision. The team's professionalism and attention to detail exceeded all expectations."
+              </p>
+              <div>
+                <strong>Arjun Kumar</strong><br />
+                <small>CEO, TechInnovate Solutions</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section style={styles.contactSection}>
+          <div style={styles.container}>
+            <div style={styles.sectionHeader}>
+              <h2 style={{...styles.sectionTitle, color: 'white'}}>
+                Ready to <span style={styles.textGradient}>Transform Your Business?</span>
+              </h2>
+              <p style={{color: '#cbd5e1'}}>Let's discuss how our premium digital solutions can accelerate your growth and establish your market presence.</p>
+            </div>
+            <div>
+              <div style={styles.contactDetails}>
+                <div style={styles.contactItem}>
+                  <span>✉️</span>
+                  <span>printhubdigit@gmail.com</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2>About PrintHub Setup</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>PrintHub Setup LLC was founded with a simple mission: to provide businesses with accessible, high-quality printing without the hassle. Based in Patna, we combine modern technology with a passion for print to deliver results that exceed expectations.</p>
-                        <p>Our team is dedicated to helping you find the perfect printing solution, ensuring every project is completed on time and to the highest standard.</p>
-                    </div>
-                    <img src="https://via.placeholder.com/500x350" alt="PrintHub Setup Office">
+                <div style={styles.contactItem}>
+                  <span>📞</span>
+                  <span>+91 12345 67890</span>
                 </div>
+                <div style={styles.contactItem}>
+                  <span>📍</span>
+                  <span>Patna, Bihar, India</span>
+                </div>
+              </div>
+              <a href="mailto:printhubdigit@gmail.com" style={styles.btn}>
+                ✈️ Start Your Project Today
+              </a>
             </div>
+          </div>
         </section>
-        
-        <section id="testimonials">
-            <div class="container">
-                 <h2>What Our Clients Say</h2>
-                 <div class="testimonial-card">
-                     <p>"The quality of the business cards was outstanding, and the customer service was even better. Highly recommended for any business!"</p>
-                     <p class="author">- A. Kumar, Patna</p>
-                 </div>
+      </main>
+
+      {/* Footer */}
+      <footer style={styles.footer}>
+        <div style={styles.container}>
+          <div style={styles.footerContent}>
+            <div style={styles.footerSection}>
+              <h3 style={styles.footerTitle}>PrintHub Setup LLC</h3>
+              <p>Transforming businesses through innovative digital solutions, professional printing services, and strategic brand development.</p>
             </div>
-        </section>
-
-
-        <section id="contact">
-            <div class="container contact-info">
-                <h2>Get In Touch</h2>
-                <p class="section-subtitle">Ready to start your next printing project? Contact us today for a free, no-obligation quote.</p>
-                <h3>Email: contact@printhubsetup.com</h3>
-                <h3>Phone: +91 12345 67890</h3>
-                <br>
-                <a href="mailto:contact@printhubsetup.com" class="btn">Email Us Now</a>
+            <div style={styles.footerSection}>
+              <h3 style={styles.footerTitle}>Services</h3>
+              <p><a href="#services" style={{color: '#64748b', textDecoration: 'none'}}>Website Development</a></p>
+              <p><a href="#services" style={{color: '#64748b', textDecoration: 'none'}}>Logo Design</a></p>
+              <p><a href="#services" style={{color: '#64748b', textDecoration: 'none'}}>Digital Marketing</a></p>
+              <p><a href="#services" style={{color: '#64748b', textDecoration: 'none'}}>Professional Printing</a></p>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 PrintHub Setup LLC. All Rights Reserved.</p>
+            <div style={styles.footerSection}>
+              <h3 style={styles.footerTitle}>Contact Info</h3>
+              <p>Email: printhubdigit@gmail.com</p>
+              <p>Phone: +91 12345 67890</p>
+              <p>Location: Patna, Bihar</p>
+            </div>
+          </div>
+          <div style={styles.footerBottom}>
+            <p>&copy; 2025 PrintHub Setup LLC. All rights reserved.</p>
+          </div>
         </div>
-    </footer>
+      </footer>
+    </div>
+  );
+};
 
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if(navLinks.classList.contains('active')) {
-                   navLinks.classList.remove('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+export default Home;
