@@ -417,7 +417,7 @@ const Home = () => {
                 <h2 style={styles.sectionTitle}>
                   About <span style={styles.textGradient}>PrintHub Setup</span>
                 </h2>
-                <p>Founded on the principles of excellence and innovation, PrintHub Setup LLC has emerged as a premier digital solutions provider, transforming businesses through cutting-edge design and strategic digital marketing.</p>
+                <p>Founded on the principles of excellence and innovation, PrintHub Setup has emerged as a premier digital solutions provider, transforming businesses through cutting-edge design and strategic digital marketing.</p>
                 <p>Our team of creative professionals and technical experts collaborate to deliver solutions that not only meet your immediate needs but position your business for long-term success in an increasingly digital marketplace.</p>
                 <p>From startups to established enterprises, we've helped hundreds of clients achieve their goals through our comprehensive suite of services and unwavering commitment to quality.</p>
               </div>
@@ -487,7 +487,7 @@ const Home = () => {
         <div style={styles.container}>
           <div style={styles.footerContent}>
             <div style={styles.footerSection}>
-              <h3 style={styles.footerTitle}>PrintHub Setup LLC</h3>
+              <h3 style={styles.footerTitle}>PrintHub Setup/h3>
               <p>Transforming businesses through innovative digital solutions, professional printing services, and strategic brand development.</p>
             </div>
             <div style={styles.footerSection}>
@@ -500,12 +500,10 @@ const Home = () => {
             <div style={styles.footerSection}>
               <h3 style={styles.footerTitle}>Contact Info</h3>
               <p>Email: printhubdigit@gmail.com</p>
-              <p>Phone: +91 12345 67890</p>
-              <p>Location: Patna, Bihar</p>
             </div>
           </div>
           <div style={styles.footerBottom}>
-            <p>&copy; 2025 PrintHub Setup LLC. All rights reserved.</p>
+            <p>&copy; 2025 PrintHub Setup. All rights reserved.</p>
           </div>
         </div>
       </footer>
